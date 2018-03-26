@@ -4,11 +4,13 @@
 import cv2
 import os
 import numpy as np
+from os import system
+from pynput import keyboard
 
 #matplotlib for display our images
 import matplotlib.pyplot as plt
 
-subjects = ["", "Leila Kassiri", "Kunal"]
+subjects = ["", "Leila Kassiri", "Kunal Maiti"]
 
 #function to detect face using OpenCV
 def detect_face(img):
@@ -142,7 +144,7 @@ def predict(frame, rect):
         label= face_recognizer.predict(face)
         print(label)
         
-        if label[1] > 30:
+        if label[1] > 40:
             return label
     return -1
 
@@ -170,7 +172,11 @@ while True:
         if label != -1:
             #get name of respective label returned by face recognizer
             label_text = subjects[label[0]]
-            draw_text(frame, label_text, rect[0], rect[1]-5)
+            #draw_text(frame, "", rect[0], rect[1]-5)
+            #voicetrigger = input()
+            #if voicetrigger == 'v':
+            voicetrigger = 'say ' + label_text
+            system(voicetrigger)
 
     # Display the resulting frame
     cv2.imshow('Video', frame)
