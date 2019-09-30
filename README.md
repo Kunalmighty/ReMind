@@ -1,4 +1,4 @@
 # ReMind
-Computer Science Innovation and Entrepreneurship II Spring 2018  
-Team: Kunal Maiti and Leila Kassiri  
+Computer Science Innovation and Entrepreneurship II 
+Kunal Maiti  
 Project name: ReMind 
